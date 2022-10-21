@@ -4,15 +4,14 @@ public class RhombusOfStars {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n=Integer.parseInt(scan.nextLine());
-        printRow(n);
+        printRhombus(n);
+    }
+    private static void printRhombus(int n){
+        printTop(n);
+        printBottom(n-1);
     }
 
-    private static void printRow(int n) {
-        printFirstHalf(n);
-       printOtherHalf(n-1);
-    }
-
-    private static void printFirstHalf(int n) {
+    private static void printTop(int n) {
         int stars=1;
         while (n>0){
             for (int i = 0; i <n-1 ; i++) {
@@ -27,7 +26,7 @@ public class RhombusOfStars {
         }
     }
 
-    private static void printOtherHalf(int n) {
+    private static void printBottom(int n) {
         int space=1;
         while (n>0){
             for (int i = 0; i <space; i++) {
