@@ -8,6 +8,11 @@ public class RhombusOfStars {
     }
 
     private static void printRow(int n) {
+        printFirstHalf(n);
+       printOtherHalf(n-1);
+    }
+
+    private static void printFirstHalf(int n) {
         int stars=1;
         while (n>0){
             for (int i = 0; i <n-1 ; i++) {
@@ -20,7 +25,6 @@ public class RhombusOfStars {
             stars++;
             n--;
         }
-        printOtherHalf(stars-2);
     }
 
     private static void printOtherHalf(int n) {
