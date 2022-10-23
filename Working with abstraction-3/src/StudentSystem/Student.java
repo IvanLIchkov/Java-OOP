@@ -1,3 +1,5 @@
+package StudentSystem;
+
 public class Student {
     private String name;
     private int age;
@@ -9,27 +11,17 @@ public class Student {
         this.grade = grade;
     }
 
-    public String getName() {
-        return this.name;
-    }
+    public String getInfo() {
+        String studentInfo = String.format("%s is %s years old.", name, age);
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        if (grade >= 5.00) {
+            studentInfo += " Excellent student.";
+        } else if (grade < 5.00 && grade >= 3.50) {
+            studentInfo += " Average student.";
+        } else {
+            studentInfo += " Very nice person.";
+        }
+        return studentInfo;
 
-    public int getAge() {
-        return this.age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public double getGrade() {
-        return this.grade;
-    }
-
-    public void setGrade(double grade) {
-        this.grade = grade;
     }
 }
