@@ -35,7 +35,7 @@ public class Team {
         return Collections.unmodifiableList(this.firstTeam);
     }
 
-    public List<Person> getReservedTeam() {
+    public List<Person> getReserveTeam() {
         return Collections.unmodifiableList(this.reserveTeam);
     }
 }

@@ -35,6 +35,6 @@ public class Main {
 //            }
 //        }
         System.out.println("First team have " + team.getFirstTeam().size() + " players");
-        System.out.println("Reserve team have " + team.getReservedTeam().size() + " players");
+        System.out.println("Reserve team have " + team.getReserveTeam().size() + " players");
     }
 }
