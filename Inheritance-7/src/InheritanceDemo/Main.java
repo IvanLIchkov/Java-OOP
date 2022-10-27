@@ -7,5 +7,6 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         Goat goat=new Goat(10,15,20);
         goat.weight=11;
+        goat.move();
     }
 }

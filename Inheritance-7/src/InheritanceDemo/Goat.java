@@ -7,4 +7,11 @@ public class Goat extends Organism{
         super(weight, height);
         this.milkGiven = milkGiven;
     }
+
+    @Override
+    public void move() {
+        System.out.print("Goat is ");
+        super.move();
+
+    }
 }

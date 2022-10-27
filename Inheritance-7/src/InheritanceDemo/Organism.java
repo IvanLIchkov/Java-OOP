@@ -8,4 +8,7 @@ public class Organism {
         this.weight = weight;
         this.height = height;
     }
+    public void move(){
+        System.out.println("Moving----->");
+    }
 }
