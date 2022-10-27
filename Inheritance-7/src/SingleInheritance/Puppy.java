@@ -1,5 +1,7 @@
 package SingleInheritance;
 
-public class Puppy {
-
+public class Puppy extends Dog {
+    public void weep(){
+        System.out.println("weeping...");
+    }
 }
