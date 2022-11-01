@@ -17,25 +17,16 @@ public abstract class Animal implements AnimalInterface {
         return animalName;
     }
 
-    protected void setAnimalName(String animalName) {
-        this.animalName = animalName;
-    }
 
     protected String getAnimalType() {
         return animalType;
     }
 
-    protected void setAnimalType(String animalType) {
-        this.animalType = animalType;
-    }
 
     protected Double getAnimalWeight() {
         return animalWeight;
     }
 
-    protected void setAnimalWeight(Double animalWeight) {
-        this.animalWeight = animalWeight;
-    }
 
     protected Integer getFoodEaten() {
         return foodEaten;
