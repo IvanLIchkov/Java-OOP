@@ -1,32 +1,15 @@
 package Vehicles;
 
 public class Truck extends VehicleImp{
-    private double fuelQuantity;
-    private double fuelConsumption;
+    private static final double FUEL_CONSUMPTION_INCREASE=1.6;
 
-    public Truck(double fuelQuantity, double fuelConsumption) {
-        this.fuelQuantity = fuelQuantity;
-        this.fuelConsumption = fuelConsumption+1.6;
-    }
-
-    @Override
-    public double getFuelConsumption() {
-        return fuelConsumption;
-    }
-
-    @Override
-    public double getFuelQuantity() {
-        return fuelQuantity;
+    public Truck(double fuelQuantity, double tankCapacity, double fuelConsumption) {
+        super(fuelQuantity, tankCapacity, fuelConsumption+FUEL_CONSUMPTION_INCREASE);
     }
 
     @Override
     public void drive(double km) {
         super.drive(km);
-    }
-
-    @Override
-    public void setFuelQuantity(double fuelQuantity) {
-        this.fuelQuantity = fuelQuantity;
     }
 
     @Override

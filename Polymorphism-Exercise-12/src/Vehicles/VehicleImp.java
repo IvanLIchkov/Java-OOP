@@ -5,13 +5,44 @@ import java.text.DecimalFormat;
 public abstract class VehicleImp implements VehicleInterface{
     private double fuelQuantity;
     private double fuelConsumption;
+    private double tankCapacity;
+
+    public VehicleImp(double fuelQuantity, double tankCapacity, double fuelConsumption) {
+        setTankCapacity(tankCapacity);
+        setFuelQuantity(fuelQuantity);
+        this.fuelConsumption = fuelConsumption;
+    }
+
+
+    public void setTankCapacity(double tankCapacity) {
+        if (fuelQuantity>this.tankCapacity){
+            System.out.println("Cannot fit fuel in tank");
+        }else {
+            this.tankCapacity=tankCapacity;
+        }
+    }
+
+    public double getTankCapacity() {
+        return tankCapacity;
+    }
+
     @Override
     public void refuel(double litres) {
-        setFuelQuantity(getFuelQuantity()+litres);
+        if (litres<=0){
+            System.out.println("Fuel must be a positive number");
+        }else if (litres+getFuelQuantity()>getTankCapacity()){
+            System.out.println("Cannot fit fuel in tank");
+        } else {
+            setFuelQuantity(getFuelQuantity() + litres);
+        }
     }
 
     public void setFuelQuantity(double fuelQuantity) {
-        this.fuelQuantity = fuelQuantity;
+        if (fuelQuantity<0){
+            System.out.println("Fuel must be a positive number");
+        }else {
+            this.fuelQuantity=fuelQuantity;
+        }
     }
 
     @Override
