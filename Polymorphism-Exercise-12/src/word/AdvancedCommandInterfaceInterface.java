@@ -1,0 +1,23 @@
+package word;
+
+import java.util.List;
+
+public class AdvancedCommandInterfaceInterface extends CommandInterfaceImpl {
+    public AdvancedCommandInterfaceInterface(StringBuilder text) {
+        super(text);
+    }
+
+    @Override
+    protected List<Command> initCommands() {
+        List<Command> commands = super.initCommands();
+
+        CutTransform cutTransform = new CutTransform();
+        Command cut = new Command("cut", new CutTransform());
+        commands.add(cut);
+
+        Command paste = new Command("paste", new PasteTransform(cutTransform));
+        commands.add(paste);
+
+        return commands;
+    }
+}
