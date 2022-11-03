@@ -1,10 +1,10 @@
 package solid.products;
 
-public class Chocolate extends Food implements Product {
+public class Chips extends Food implements Product {
 
-    private static final double CALORIES_PER_100_GRAMS = 575.0;
+    private static final double CALORIES_PER_100_GRAMS = 529.0;
 
-    public Chocolate(double grams) {
+    public Chips(double grams) {
         super(grams);
     }
 
@@ -12,4 +12,5 @@ public class Chocolate extends Food implements Product {
     public double getAmountOfCalories() {
         return this.getGrams() * (CALORIES_PER_100_GRAMS / 100);
     }
+
 }
