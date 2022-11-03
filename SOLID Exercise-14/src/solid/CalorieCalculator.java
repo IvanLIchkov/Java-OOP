@@ -8,10 +8,12 @@ import java.util.List;
 
 public class CalorieCalculator {
 
-    private static final String SUM = "Sum: %f";
-    private static final String AVERAGE = "Average: %f";
+    private final Printer printer;
+    private static final String SUM_FORMAT = "Sum: %f";
+    private static final String AVERAGE_FORMAT = "Average: %f";
 
-    public CalorieCalculator() {
+    public CalorieCalculator(Printer printer) {
+        this.printer = new Printer();
     }
 
     public double sum(List<Object> products) {
@@ -32,19 +34,17 @@ public class CalorieCalculator {
                 sum += (Chocolate.CALORIES_PER_100_GRAMS / 100) * ((Chocolate) product).getGrams();
             }
         }
-
+        print(SUM_FORMAT, sum);
         return sum;
     }
-
     public double average(List<Object> products) {
-        return sum(products) / products.size();
+        final double average = sum(products) / products.size();
+        this.printer.print(AVERAGE_FORMAT, average);
+        return average;
     }
 
-    public void printSum(List<Object> products) {
-        System.out.printf((SUM) + "%n", sum(products));
+    public void print(String format, double amount){
+        this.printer.print(format, amount);
     }
 
-    public void printAverage(List<Object> products) {
-        System.out.printf((AVERAGE) + "%n", average(products));
-    }
 }
