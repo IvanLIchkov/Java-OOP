@@ -1,33 +1,27 @@
-import java.lang.reflect.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.TreeSet;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-         Class<?> clazz= Class.forName("Reflection");
+    public static void main(String[] args) {
+        Class<Reflection> clazz=Reflection.class;
 
-        Method[] declaredMethods = clazz.getDeclaredMethods();
+        Method[] methods = clazz.getDeclaredMethods();
+        Field[] declaredFields = clazz.getDeclaredFields();
 
-        TreeSet<Method> getters = filterMethodsBy(declaredMethods,"get");
-        TreeSet<Method> setters = filterMethodsBy(declaredMethods,"set");
+        TreeSet<Field> fields = ReflectionUtils.collectByName(Arrays.stream(declaredFields));
+        ReflectionUtils.filterMembers(fields.stream(), f-> !Modifier.isPrivate(f.getModifiers()))
+                .forEach(f-> System.out.printf("%s must be private!%n",f.getName()));
 
-        Function<Class<?>, String>formatType=c->c==int.class?"class int": c.toString();
 
-        getters.forEach(m->{
-            System.out.printf("%s will return %s%n",m.getName(),formatType.apply(m.getReturnType()));
-        });
-        setters.forEach(m->{
-            System.out.printf("%s and will set field of %s%n",m.getName(),formatType.apply(m.getParameterTypes()[0]));
-        });
-    }
-    public static TreeSet<Method> filterMethodsBy(Method[] methods,String filter){
-        return Arrays.stream(methods)
-                .filter(m -> m.getName().contains(filter))
-                .collect(Collectors.toCollection(() -> {
-                    return new TreeSet<>(Comparator.comparing(Method::getName));
-                }));
+        TreeSet<Method> getters = ReflectionUtils.collectByName(ReflectionUtils.filterMembersByName(methods,"get"));
+        ReflectionUtils.filterMembers(getters.stream(), g-> !Modifier.isPublic(g.getModifiers()))
+                .forEach(f-> System.out.printf("%s have to be public!%n",f.getName()));
+
+        TreeSet<Method> setters = ReflectionUtils.collectByName(ReflectionUtils.filterMembersByName(methods,"set"));
+        ReflectionUtils.filterMembers(setters.stream(), s-> !Modifier.isPrivate(s.getModifiers()))
+                .forEach(f-> System.out.printf("%s have to be private!%n",f.getName()));
     }
 }
