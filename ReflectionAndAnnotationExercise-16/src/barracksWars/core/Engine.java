@@ -10,6 +10,7 @@ import jdk.jshell.spi.ExecutionControl;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.InvocationTargetException;
 
 public class Engine implements Runnable {
 
@@ -35,16 +36,19 @@ public class Engine implements Runnable {
 					break;
 				}
 				System.out.println(result);
-			} catch (RuntimeException e) {
+			} catch (Exception e) {
 				System.out.println(e.getMessage());
-			} catch (IOException | ExecutionControl.NotImplementedException e) {
-				e.printStackTrace();
 			}
 		}
 	}
 
 	// TODO: refactor for problem 4
-	private String interpretCommand(String[] data, String commandName) throws ExecutionControl.NotImplementedException {
+	private String interpretCommand(String[] data, String commandName) throws ExecutionControl.NotImplementedException,
+			ClassNotFoundException,
+			InvocationTargetException,
+			NoSuchMethodException,
+			InstantiationException,
+			IllegalAccessException {
 		String result;
 		switch (commandName) {
 			case "add":
@@ -67,12 +71,16 @@ public class Engine implements Runnable {
 		return output;
 	}
 
-	private String addUnitCommand(String[] data) throws ExecutionControl.NotImplementedException {
+	private String addUnitCommand(String[] data) throws ExecutionControl.NotImplementedException,
+			ClassNotFoundException,
+			InvocationTargetException,
+			NoSuchMethodException,
+			InstantiationException,
+			IllegalAccessException {
 		String unitType = data[1];
 		Unit unitToAdd = this.unitFactory.createUnit(unitType);
 		this.repository.addUnit(unitToAdd);
-		String output = unitType + " added!";
-		return output;
+		return unitType + " added!";
 	}
 	
 	private String fightCommand(String[] data) {

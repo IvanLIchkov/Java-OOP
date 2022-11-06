@@ -28,9 +28,9 @@ public class UnitRepository implements Repository {
 	public String getStatistics() {
 		StringBuilder statBuilder = new StringBuilder();
 		for (Map.Entry<String, Integer> entry : amountOfUnits.entrySet()) {
-			String formatedEntry =
+			String formattedEntry =
 					String.format("%s -> %d%n", entry.getKey(), entry.getValue());
-			statBuilder.append(formatedEntry);
+			statBuilder.append(formattedEntry);
 		}
 		statBuilder.setLength(
 				statBuilder.length() - System.lineSeparator().length());
