@@ -1,34 +1,26 @@
 package barracksWars.core.commands;
 
+import barracksWars.annotations.Inject;
 import barracksWars.interfaces.Executable;
 import barracksWars.interfaces.Repository;
 import barracksWars.interfaces.UnitFactory;
+import jdk.jshell.spi.ExecutionControl;
+
+import java.lang.reflect.InvocationTargetException;
 
 public abstract class Command implements Executable {
     private final String[] data;
-    private final Repository repository;
-    private final UnitFactory unitFactory;
 
-    public Command(String[] data, Repository repository, UnitFactory unitFactory) {
+    public Command(String[] data) {
         this.data = data;
-        this.repository = repository;
-        this.unitFactory = unitFactory;
     }
 
     public String[] getData() {
         return this.data;
     }
 
-    public Repository getRepository() {
-        return this.repository;
-    }
-
-    public UnitFactory getUnitFactory() {
-        return this.unitFactory;
-    }
-
     @Override
-    public String execute() {
+    public String execute() throws ExecutionControl.NotImplementedException, ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         return null;
     }
 }
