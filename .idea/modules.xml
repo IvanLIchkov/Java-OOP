@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DebuggingTechniques-18/DebuggingTechniques-18.iml" filepath="$PROJECT_DIR$/DebuggingTechniques-18/DebuggingTechniques-18.iml" />
       <module fileurl="file://$PROJECT_DIR$/Encapsulation-5/Encapsulation-5.iml" filepath="$PROJECT_DIR$/Encapsulation-5/Encapsulation-5.iml" />
       <module fileurl="file://$PROJECT_DIR$/EncapsulationExercise-6/EncapsulationExercise-6.iml" filepath="$PROJECT_DIR$/EncapsulationExercise-6/EncapsulationExercise-6.iml" />
       <module fileurl="file://$PROJECT_DIR$/ExeptionsAndErrorhandling-17/ExeptionsAndErrorhandling-17.iml" filepath="$PROJECT_DIR$/ExeptionsAndErrorhandling-17/ExeptionsAndErrorhandling-17.iml" />
@@ -16,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/ReflectionAndAnotation-15/ReflectionAndAnotation-15.iml" filepath="$PROJECT_DIR$/ReflectionAndAnotation-15/ReflectionAndAnotation-15.iml" />
       <module fileurl="file://$PROJECT_DIR$/SOLID Exercise-14/SOLID Exercise-14.iml" filepath="$PROJECT_DIR$/SOLID Exercise-14/SOLID Exercise-14.iml" />
       <module fileurl="file://$PROJECT_DIR$/SOLID-13/SOLID-13.iml" filepath="$PROJECT_DIR$/SOLID-13/SOLID-13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UnitTesting-19/UnitTesting-19.iml" filepath="$PROJECT_DIR$/UnitTesting-19/UnitTesting-19.iml" />
       <module fileurl="file://$PROJECT_DIR$/Working with abstraction-3/Working with abstraction.iml" filepath="$PROJECT_DIR$/Working with abstraction-3/Working with abstraction.iml" />
       <module fileurl="file://$PROJECT_DIR$/Working with abstraction exercise-4/Working with abstraction exercise-4.iml" filepath="$PROJECT_DIR$/Working with abstraction exercise-4/Working with abstraction exercise-4.iml" />
     </modules>
