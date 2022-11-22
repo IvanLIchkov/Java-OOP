@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="TestDrivenDevelopment-TDD-22" />
         <module name="TestDrivenDevelopment-TDD-21" />
+        <module name="Exam22Aug2020" />
+        <module name="Exam19Dec2020" />
         <module name="UnitTestingExercise-20" />
       </profile>
     </annotationProcessing>
