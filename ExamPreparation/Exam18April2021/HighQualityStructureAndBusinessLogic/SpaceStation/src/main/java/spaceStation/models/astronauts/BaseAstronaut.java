@@ -40,9 +40,10 @@ public abstract class BaseAstronaut implements Astronaut{
     }
 
     public void setOxygen(double oxygen) {
-        if (this.oxygen - oxygen>0){
-            this.oxygen = oxygen;
+        if (oxygen<0){
+            canBreath();
+            throw new IllegalArgumentExeption("Cannot create Astronaut with negative oxygen!");
         }
-        canBreath();
+        this.oxygen=oxygen;
     }
 }
