@@ -1,5 +1,7 @@
-package factoryExercise;
+package factoryExercise.cakes;
 
+
+import factoryExercise.cakes.CakeInterface;
 
 public abstract class Cake implements CakeInterface {
     public double diameter;

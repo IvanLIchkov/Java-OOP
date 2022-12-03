@@ -1,6 +1,6 @@
 package prototypeExercise;
 
-class EmployeeRecord {
+class EmployeeRecord implements Prototype{
     private int id;
     private String name;
     private String designation;
@@ -23,6 +23,22 @@ class EmployeeRecord {
     }
 
     public void showRecord() {
-        // TODO
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString() {
+        return "EmployeeRecord{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", designation='" + designation + '\'' +
+                ", salary=" + salary +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
+    @Override
+    public Prototype getCLone() {
+        return new EmployeeRecord(this.id, this.name, this.designation, this.salary, this.address);
     }
 }
