@@ -1,8 +1,7 @@
 package factoryExercise;
 
-import com.company.factoryPattern.solution.CakeInt;
 
-public abstract class Cake implements CakeInt {
+public abstract class Cake implements CakeInterface {
     public double diameter;
     public double price;
     public int pieces;
